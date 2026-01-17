@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "simple_column-scopes"
   spec.version       = SimpleColumn::Scopes::VERSION
   spec.authors       = ["Peter Boling"]
-  spec.email         = ["peter.boling@gmail.com"]
+  spec.email         = ["floss@galtzo.com"]
 
   spec.summary       = %q{Easily add named scopes that query on single columns for specific values}
   spec.description   = %q{Dynamic modules which define dynamic methods for scopes based on a dynamic array of column names}
-  spec.homepage      = "https://github.com/tophatter/simple_column-scopes"
+  spec.homepage      = "https://github.com/galtzo-floss/simple_column-scopes"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
@@ -21,7 +21,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.15"
   spec.add_development_dependency "rake", "~> 13.3"
   spec.add_development_dependency "rspec", "~> 3.0"
 end
