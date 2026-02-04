@@ -5,6 +5,6 @@
 #     # ... your code
 #     kettle-dev:unfreeze
 # We run code coverage on the latest version of Ruby only.
-# Coverage
 
-gem "kettle-soup-cover", "~> 1.0", ">= 1.0.10", require: false
+# Coverage
+gem "kettle-soup-cover", "~> 1.1", ">= 1.1.1", require: false   # ruby >= 2.7

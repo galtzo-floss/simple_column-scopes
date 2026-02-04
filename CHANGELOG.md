@@ -28,10 +28,29 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- circular require
-
 ### Security
 
-[Unreleased]: https://github.com/galtzo-floss/simple_column-scopes/compare/v0.1.0...HEAD
+## [0.1.1] - 2026-02-03
+
+- TAG: [v0.1.1][0.1.1t]
+- COVERAGE: 100.00% -- 29/29 lines in 2 files
+- BRANCH COVERAGE: 100.00% -- 2/2 branches in 2 files
+- 50.00% documented
+
+### Fixed
+
+- circular require
+
+## [0.1.0] - 2017-06-20
+
+- TAG: [v0.1.0][0.1.0t]
+
+### Added
+
+- initial release
+
+[Unreleased]: https://github.com/galtzo-floss/simple_column-scopes/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/galtzo-floss/simple_column-scopes/compare/v0.1.0...v0.1.1
+[0.1.1t]: https://github.com/galtzo-floss/simple_column-scopes/releases/tag/v0.1.1
 [0.1.0]: https://github.com/galtzo-floss/simple_column-scopes/compare/f2bce9c56122527d5d035d9f4bc7f7d13a2f8b57...v0.1.0
 [0.1.0t]: https://github.com/galtzo-floss/simple_column-scopes/tags/v0.1.0
