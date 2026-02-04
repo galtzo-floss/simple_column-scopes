@@ -354,7 +354,7 @@ the [Pessimistic Version Constraint][📌pvc] with two digits of precision.
 For example:
 
 ```ruby
-spec.add_dependency("simple_column-scopes", "~> 1.0")
+spec.add_dependency("simple_column-scopes", "~> 0.1")
 ```
 
 <details markdown="1">
