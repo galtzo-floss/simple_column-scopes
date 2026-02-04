@@ -385,7 +385,7 @@ DEPENDENCIES
   rubocop-ruby2_4
   ruby-progressbar (~> 1.13)
   simple_column-scopes!
-  sqlite3 (~> 2.1)
+  sqlite3 (>= 1.4)
   standard (>= 1.50)
   stone_checksums (~> 1.0, >= 1.0.3)
   stringio (>= 3.0)
