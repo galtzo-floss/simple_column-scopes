@@ -50,7 +50,7 @@ Please file a bug if you notice a violation of semantic versioning.
 - initial release
 
 [Unreleased]: https://github.com/galtzo-floss/simple_column-scopes/compare/v0.1.1...HEAD
-[0.1.1]: https://github.com/galtzo-floss/simple_column-scopes/compare/HEAD^...v0.1.1
+[0.1.1]: https://github.com/galtzo-floss/simple_column-scopes/compare/v0.1.0...v0.1.1
 [0.1.1t]: https://github.com/galtzo-floss/simple_column-scopes/releases/tag/v0.1.1
 [0.1.0]: https://github.com/galtzo-floss/simple_column-scopes/compare/f2bce9c56122527d5d035d9f4bc7f7d13a2f8b57...v0.1.0
 [0.1.0t]: https://github.com/galtzo-floss/simple_column-scopes/tags/v0.1.0
