@@ -1,13 +1,11 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-# Ignored default folder with query files
-/queries/
+# Editor-based HTTP Client requests
+/httpRequests/
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-# Editor-based HTTP Client requests
-/httpRequests/
 
 # Zencoder local files
 /zencoder/chats
@@ -40,7 +38,8 @@
 # /misc.xml
 
 # Commit: VCS local mappings can be regenerated (optional). Comment to share settings.
-/vcs.xml
+# /vcs.xml
 
 # Commit: Dictionary files (local spellcheck customizations)
 # /dictionaries/
+

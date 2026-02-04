@@ -1,4 +1,4 @@
-require 'simple_column/scopes/version'
+require "simple_column/scopes/version"
 
 # Purpose:
 # Create dynamic modules which define dynamic methods for scopes based on a dynamic array of column names
@@ -12,7 +12,7 @@ require 'simple_column/scopes/version'
 #         and they query on the user_id and seller_id columns, respectively
 #
 module SimpleColumn
-  SCOPE_PREFIX = 'for_'.freeze
+  SCOPE_PREFIX = "for_".freeze
   SCOPE_PREFIX_REGEX = Regexp.new("\\A#{SimpleColumn::SCOPE_PREFIX}")
   class << self
     # returns an anonymous (nameless) Module instance
@@ -34,7 +34,7 @@ module SimpleColumn
       # => { :for_user_id => "user_id" }
       @simple_scope_names_hash = scope_names.map(&:to_sym).each_with_object({}) do |scope_name, memo|
         # method name definitions are best with symbols, and gsub only works on strings.
-        memo[scope_name] = scope_name.to_s.sub(SimpleColumn::SCOPE_PREFIX_REGEX, '')
+        memo[scope_name] = scope_name.to_s.sub(SimpleColumn::SCOPE_PREFIX_REGEX, "")
       end
       # Raising an error here is safe, because it will fail on boot if there is an implementation problem (early!)
       unless (bad_scopes = @simple_scope_names_hash.select { |scope_name, column_name| scope_name.to_s == column_name }).blank?
@@ -61,4 +61,8 @@ module SimpleColumn
       raise ArgumentError, "SimpleColumn::Scopes need to be named like #{SimpleColumn::SCOPE_PREFIX}<column_name>, but provided #{bad_scopes.keys}"
     end
   end
+end
+
+SimpleColumn::Scopes::Version.class_eval do
+  extend VersionGem::Basic
 end

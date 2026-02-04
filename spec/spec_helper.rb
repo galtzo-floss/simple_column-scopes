@@ -1,4 +1,19 @@
-require "bundler/setup"
+require "kettle/test/rspec"
+
+# Config for development dependencies of this library
+# i.e., not configured by this library
+#
+# Simplecov & related config (must run BEFORE any other requires)
+# NOTE: Gemfiles for older rubies won't have kettle-soup-cover.
+#       The rescue LoadError handles that scenario.
+begin
+  require "kettle-soup-cover"
+  require "simplecov" if Kettle::Soup::Cover::DO_COV # `.simplecov` is run here!
+rescue LoadError => error
+  # check the error message and re-raise when unexpected
+  raise error unless error.message.include?("kettle")
+end
+
 require "simple_column/scopes"
 
 RSpec.configure do |config|
