@@ -1,4 +1,3 @@
-require 'simple_column/scopes'
 require 'simple_column/scopes/version'
 
 # Purpose:
