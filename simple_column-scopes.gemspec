@@ -1,10 +1,10 @@
+# coding: utf-8
 # frozen_string_literal: true
 
 # To retain during kettle-dev templating:
 #     kettle-dev:freeze
 #     # ... your code
 #     kettle-dev:unfreeze
-# coding: utf-8
 
 gem_version =
   if RUBY_VERSION >= "3.1" # rubocop:disable Gemspec/RubyVersionGlobalsUsage
@@ -28,8 +28,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Peter H. Boling"]
   spec.email = ["floss@galtzo.com"]
 
-  spec.summary       = %q{🏛️ Easily add named scopes that query on single columns for specific values}
-  spec.description   = %q{🏛️ Dynamic modules which define dynamic methods for scopes based on a dynamic array of column names}
+  spec.summary = "🏛️ Easily add named scopes that query on single columns for specific values"
+  spec.description = "🏛️ Dynamic modules which define dynamic methods for scopes based on a dynamic array of column names"
   spec.homepage = "https://github.com/galtzo-floss/simple_column-scopes"
   spec.licenses = ["MIT"]
   spec.required_ruby_version = ">= 2.4.0"

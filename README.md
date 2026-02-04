@@ -191,11 +191,16 @@ Create a scope that queries it, by prefixing `for_` to the column name:
 
 ```ruby
 include SimpleColumn::Scopes.new(:for_user_id)
+
 ```
+
 is equivalent to:
+
 ```ruby
-def self.for_user_id(user_id)
-  where(user_id: user_id)
+class << self
+  def for_user_id(user_id)
+    where(user_id: user_id)
+  end
 end
 ```
 
@@ -210,7 +215,6 @@ Complete example\*:
 #  user_id        :integer(4)
 #  seller_id  :integer(4)
 class Monkey < ActiveRecord::Base
-
   include SimpleColumn::Scopes.new(:for_user_id, :for_seller_id, :etc)
   # => for_user_id, and for_seller_id scopes are added to the model,
   #       and they query on the user_id and seller_id columns, respectively
