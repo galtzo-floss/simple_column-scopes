@@ -12,7 +12,8 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Easily add named scopes that query on single columns for specific values}
   spec.description   = %q{Dynamic modules which define dynamic methods for scopes based on a dynamic array of column names}
   spec.homepage      = "https://github.com/galtzo-floss/simple_column-scopes"
-  spec.license       = "MIT"
+  spec.licenses = ["MIT"]
+  spec.required_ruby_version = ">= 2.4.0"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
