@@ -103,6 +103,8 @@ Gem::Specification.new do |spec|
   spec.executables = []
 
   # Utilities
+  spec.add_dependency("activerecord", ">= 5.2.8.1")
+  spec.add_dependency("activesupport", ">= 5.2.8.1")
   spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.9")              # ruby >= 2.2.0
 
   # NOTE: It is preferable to list development dependencies in the gemspec due to increased
@@ -117,6 +119,9 @@ Gem::Specification.new do |spec|
   #
   #       Development dependencies that require strictly newer Ruby versions should be in a "gemfile",
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
+
+  spec.add_development_dependency("anonymous_active_record", "~> 1.0", ">= 1.0.9")  # ruby >= 2.4.0
+  spec.add_development_dependency("sqlite3", "~> 2.1")
 
   # Dev, Test, & Release Tasks
   spec.add_development_dependency("kettle-dev", "~> 1.2")                           # ruby >= 2.3.0

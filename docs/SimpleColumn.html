@@ -153,7 +153,7 @@ Create dynamic modules which define dynamic methods for scopes based on a dynami
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_mod-class_method" title="to_mod (class method)">.<strong>to_mod</strong>(scope_names_hash)  &#x21d2; Object </a>
+      <a href="#to_mod-class_method" title="to_mod (class method)">.<strong>to_mod</strong>(scope_names_hash)  &#x21d2; Module </a>
     
 
     
@@ -167,7 +167,7 @@ Create dynamic modules which define dynamic methods for scopes based on a dynami
   
 
   
-    <span class="summary_desc"><div class='inline'><p>returns an anonymous (nameless) Module instance.</p>
+    <span class="summary_desc"><div class='inline'><p>An anonymous (nameless) Module instance.</p>
 </div></span>
   
 </li>
@@ -185,7 +185,7 @@ Create dynamic modules which define dynamic methods for scopes based on a dynami
       <div class="method_details first">
   <h3 class="signature first" id="to_mod-class_method">
   
-    .<strong>to_mod</strong>(scope_names_hash)  &#x21d2; <tt>Object</tt> 
+    .<strong>to_mod</strong>(scope_names_hash)  &#x21d2; <tt>Module</tt> 
   
 
   
@@ -193,13 +193,45 @@ Create dynamic modules which define dynamic methods for scopes based on a dynami
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>returns an anonymous (nameless) Module instance</p>
+    <p>Returns an anonymous (nameless) Module instance.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>scope_names_hash</span>
+      
+      
+        <span class='type'>(<tt>Hash{Symbol =&gt; String}</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Module</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>an anonymous (nameless) Module instance</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -207,8 +239,6 @@ Create dynamic modules which define dynamic methods for scopes based on a dynami
       <pre class="lines">
 
 
-19
-20
 21
 22
 23
@@ -216,10 +246,12 @@ Create dynamic modules which define dynamic methods for scopes based on a dynami
 25
 26
 27
-28</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/simple_column/scopes.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/simple_column/scopes.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_mod'>to_mod</span><span class='lparen'>(</span><span class='id identifier rubyid_scope_names_hash'>scope_names_hash</span><span class='rparen'>)</span>
   <span class='const'>Module</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span>
@@ -241,7 +273,7 @@ Create dynamic modules which define dynamic methods for scopes based on a dynami
 </div>
 
       <div id="footer">
-  Generated on Tue Feb  3 21:50:50 2026 by
+  Generated on Tue Feb  3 23:10:33 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.38 (ruby-4.0.1).
 </div>

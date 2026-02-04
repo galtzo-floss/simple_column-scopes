@@ -1,4 +1,5 @@
 require "simple_column/scopes/version"
+require "active_support/core_ext/object/blank"
 
 # Purpose:
 # Create dynamic modules which define dynamic methods for scopes based on a dynamic array of column names
@@ -15,7 +16,8 @@ module SimpleColumn
   SCOPE_PREFIX = "for_".freeze
   SCOPE_PREFIX_REGEX = Regexp.new("\\A#{SimpleColumn::SCOPE_PREFIX}")
   class << self
-    # returns an anonymous (nameless) Module instance
+    # @param scope_names_hash [Hash{Symbol => String}]
+    # @return [Module] an anonymous (nameless) Module instance
     def to_mod(scope_names_hash)
       Module.new do
         scope_names_hash.each do |scope_name, column_name|
@@ -30,6 +32,8 @@ module SimpleColumn
 
   # This is a Class / Module Hybrid (see simple_column/scopes/version.rb)
   Scopes.class_eval do
+    # @param scope_names [Array<Symbol, String>] the names of the scopes to define.
+    #   Must start with {SimpleColumn::SCOPE_PREFIX} ("for_").
     def initialize(*scope_names)
       # => { :for_user_id => "user_id" }
       @simple_scope_names_hash = scope_names.map(&:to_sym).each_with_object({}) do |scope_name, memo|
@@ -42,6 +46,7 @@ module SimpleColumn
       end
     end
 
+    # @param base [Class] the class that includes this module.
     def included(base)
       # How to do this without breaking the build?
       # if ActiveRecord::Base.connection.active?
@@ -57,6 +62,8 @@ module SimpleColumn
       base.send(:extend, anonymous_module)
     end
 
+    # @param bad_scopes [Hash] hash of scope names that failed validation.
+    # @raise [ArgumentError]
     def bad_scope_names(bad_scopes)
       raise ArgumentError, "SimpleColumn::Scopes need to be named like #{SimpleColumn::SCOPE_PREFIX}<column_name>, but provided #{bad_scopes.keys}"
     end
