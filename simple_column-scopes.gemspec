@@ -121,7 +121,6 @@ Gem::Specification.new do |spec|
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   spec.add_development_dependency("anonymous_active_record", "~> 1.0", ">= 1.0.9")  # ruby >= 2.4.0
-  spec.add_development_dependency("sqlite3", ">= 1.4")
 
   # Dev, Test, & Release Tasks
   spec.add_development_dependency("kettle-dev", "~> 1.2")                           # ruby >= 2.3.0

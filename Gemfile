@@ -32,3 +32,6 @@ eval_gemfile "gemfiles/modular/optional.gemfile"
 
 ### Std Lib Extracted Gems
 eval_gemfile "gemfiles/modular/x_std_libs.gemfile"
+
+# for testing against Rails v8
+eval_gemfile "gemfiles/modular/activerecord/ar-8.0.gemfile"

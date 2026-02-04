@@ -4,4 +4,6 @@ source "https://gem.coop"
 
 gemspec :path => "../"
 
+eval_gemfile("modular/activerecord/ar-8.0.gemfile")
+
 eval_gemfile("modular/runtime_heads.gemfile")
