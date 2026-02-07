@@ -24,12 +24,15 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Updated documentation on hostile takeover of RubyGems
     - https://dev.to/galtzo/hostile-takeover-of-rubygems-my-thoughts-5hlo
+- switch to [setup-ruby-flash](https://github.com/appraisal-rb/setup-ruby-flash) in some workflows
 
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- RSpec tests actually run in CI, and report coverage
 
 ### Security
 
