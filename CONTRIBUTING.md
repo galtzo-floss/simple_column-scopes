@@ -112,7 +112,7 @@ bundle exec reek > REEK
 To run all tests
 
 ```console
-bundle exec rake test
+bundle exec rake magic
 ```
 
 ### Spec organization (required)
