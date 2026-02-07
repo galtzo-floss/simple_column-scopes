@@ -19,7 +19,7 @@ This document captures project-specific knowledge to streamline setup, testing, 
     - bundle install
 - Rake tasks (preferred entry points)
   - The Rakefile wires common workflows. Useful targets:
-    - rake spec — run RSpec suite (also aliased via rake test)
+    - rake spec — run RSpec suite (also aliased via rake magic)
     - rake coverage — run specs with coverage locally and open a report (requires kettle-soup-cover)
     - rake rubocop_gradual:autocorrect — RuboCop-LTS Gradual, with autocorrect as default task
     - rake reek and rake reek:update — code smell checks and persisted snapshots in REEK

@@ -41,7 +41,7 @@
 # rake rubocop_gradual_debug:check            # Run RuboCop Gradual to check the lock file
 # rake rubocop_gradual_debug:force_update     # Run RuboCop Gradual to force update the l...
 # rake spec                                   # Run RSpec code examples
-# rake test                                   # Run tests
+# rake magic                                   # Run tests
 # rake yard                                   # Generate YARD Documentation
 #
 
@@ -55,6 +55,39 @@ end
 
 # External gems that define tasks - add here!
 require "kettle/dev"
+
+begin
+  require "rspec/core/rake_task"
+  # All other specs run after FFI specs
+  # Excludes :ffi_backend tests (which already ran in ffi_specs)
+  desc("Run all specs")
+  RSpec::Core::RakeTask.new(:all_specs) do |t|
+    t.pattern = "./spec/**/*_spec.rb"
+  end
+  desc("Set SimpleCov command name for remaining specs")
+  task(:set_all_specs_command_name) do
+    ENV["MAX_ROWS"] = "3"
+    ENV["K_SOUP_COV_COMMAND_NAME"] = "All Specs"
+  end
+  Rake::Task[:all_specs].enhance([:set_all_specs_command_name])
+
+  # kettle-dev creates an RSpec::Core::RakeTask.new(:spec) which has both
+  # prerequisites and actions. We will leave that, and the default test task, alone,
+  # and use *magic* here. Add any other tasks that should run for the main CI task here.
+  Rake::Task[:magic].clear if Rake::Task.task_defined?(:magic)
+  desc("Run all specs")
+  task(magic: [:all_specs])
+rescue LoadError
+  desc("(stub) spec is unavailable")
+  task(:spec) do # rubocop:disable Rake/DuplicateTask
+    warn("NOTE: rspec isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+
+  desc("(stub) test is unavailable")
+  task(:test) do # rubocop:disable Rake/DuplicateTask
+    warn("NOTE: rspec isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+end
 
 ### RELEASE TASKS
 # Setup stone_checksums
