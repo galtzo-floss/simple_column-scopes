@@ -1,5 +1,6 @@
-require "simple_column/scopes/version"
 require "active_support/core_ext/object/blank"
+require "version_gem"
+require_relative "scopes/version"
 
 # Purpose:
 # Create dynamic modules which define dynamic methods for scopes based on a dynamic array of column names

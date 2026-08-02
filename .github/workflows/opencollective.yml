@@ -12,24 +12,28 @@ permissions:
 jobs:
   update-backers:
     runs-on: ubuntu-latest
+    env:
+      README_UPDATER_TOKEN: ${{ secrets.README_UPDATER_TOKEN }}
+      REPO: ${{ github.repository }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - name: Setup Ruby & RubyGems
-        uses: ruby/setup-ruby@v1
+        uses: appraisal-rb/setup-ruby-flash@b22cb587431e9611d9e0a624a43872e2bbfbcd66 # v2.0
         with:
           ruby-version: ruby
           rubygems: default
           bundler: default
           bundler-cache: true
+          manual-compatibility-bundle: true
+          gem-install-retries: 7
 
       - name: README Update
+        if: ${{ env.README_UPDATER_TOKEN != '' }}
         env:
           # Keep GITHUB_TOKEN for any tools/scripts expecting it, mapped to the same secret
-          GITHUB_TOKEN: ${{ secrets.README_UPDATER_TOKEN }}
-          README_UPDATER_TOKEN: ${{ secrets.README_UPDATER_TOKEN }}
-          REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ env.README_UPDATER_TOKEN }}
         run: |
           git config user.name 'autobolt'
           git config user.email 'autobots@9thbit.net'
