@@ -1,0 +1,174 @@
+{
+  "#            appraisal: \"current\"\n#            exec_cmd: \"rake magic\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        50,
+        58
+      ]
+    }
+  ],
+  "#            appraisal: \"head\"\n#            exec_cmd: \"rake magic\"": [
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        52,
+        61
+      ]
+    }
+  ],
+  "#            bundler: default\n#            experimental: true": [
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        56,
+        65
+      ]
+    }
+  ],
+  "#            exec_cmd: \"rake magic\"\n#            gemfile: \"Appraisal.root\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        51,
+        59
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        53,
+        62
+      ]
+    }
+  ],
+  "#            gemfile: \"Appraisal.root\"\n#            rubygems: default": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        52,
+        60
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        54,
+        63
+      ]
+    }
+  ],
+  "#            rubygems: default\n#            bundler: default": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        53,
+        61
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        55,
+        64
+      ]
+    }
+  ],
+  "# Continue to the next step on failure\ncontinue-on-error: true": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        90,
+        104
+      ]
+    },
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        91,
+        105
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        93,
+        107
+      ]
+    },
+    {
+      "file": ".github/workflows/truffle.yml",
+      "lines": [
+        76,
+        89
+      ]
+    }
+  ],
+  "appraisal: \"current\"\nexec_cmd: \"rake test\"": [
+    {
+      "file": ".github/workflows/truffle.yml",
+      "lines": [
+        41,
+        49
+      ]
+    }
+  ],
+  "exec_cmd: \"rake magic\"\ngemfile: \"Appraisal.root\"": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        45,
+        53,
+        61
+      ]
+    }
+  ],
+  "exec_cmd: \"rake test\"\ngemfile: \"Appraisal.root\"": [
+    {
+      "file": ".github/workflows/truffle.yml",
+      "lines": [
+        42,
+        50
+      ]
+    }
+  ],
+  "gemfile: \"Appraisal.root\"\nrubygems: default": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        54,
+        62
+      ]
+    },
+    {
+      "file": ".github/workflows/truffle.yml",
+      "lines": [
+        43,
+        51
+      ]
+    }
+  ],
+  "if: ${{ !env.ACT || (! startsWith(matrix.ruby, 'jruby') && !startsWith(matrix.ruby, 'truffleruby')) }}\nrun: bundle": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        83,
+        88
+      ]
+    },
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        84,
+        89
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        86,
+        91
+      ]
+    }
+  ]
+}
