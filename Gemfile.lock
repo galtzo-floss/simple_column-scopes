@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/jruby/activerecord-jdbc-adapter.git
+  revision: 79b532a133f84f6abee476b2588ed24fd18f9239
+  branch: 70-stable
+  specs:
+
 PATH
   remote: .
   specs:
@@ -9,13 +15,13 @@ PATH
 GEM
   remote: https://gem.coop/
   specs:
-    activemodel (8.0.4)
-      activesupport (= 8.0.4)
-    activerecord (8.0.4)
-      activemodel (= 8.0.4)
-      activesupport (= 8.0.4)
+    activemodel (7.2.3.2)
+      activesupport (= 7.2.3.2)
+    activerecord (7.2.3.2)
+      activemodel (= 7.2.3.2)
+      activesupport (= 7.2.3.2)
       timeout (>= 0.4.0)
-    activesupport (8.0.4)
+    activesupport (7.2.3.2)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -24,10 +30,9 @@ GEM
       drb
       i18n (>= 1.6, < 2)
       logger (>= 1.4.2)
-      minitest (>= 5.1)
+      minitest (>= 5.1, < 6)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
-      uri (>= 0.13.1)
     addressable (2.8.8)
       public_suffix (>= 2.0.2, < 8.0)
     anonymous_active_record (1.0.9)
@@ -177,8 +182,8 @@ GEM
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     logger (1.7.0)
-    minitest (6.0.1)
-      prism (~> 1.5)
+    mini_portile2 (2.8.9)
+    minitest (5.27.0)
     mister_bin (0.9.0)
       colsole (~> 1.0.0)
       docopt_ng (~> 0.7.1)
@@ -352,6 +357,8 @@ GEM
       simplecov (>= 0.4.1)
     simplecov_lcov_formatter (0.9.0)
       simplecov (>= 0.18)
+    sqlite3 (1.7.3)
+      mini_portile2 (~> 2.8.0)
     standard (1.56.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -403,7 +410,6 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    uri (1.1.1)
     version_gem (1.1.15)
     webrick (1.9.2)
     yaml-converter (0.2.4)
@@ -429,6 +435,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord (~> 7.2.0)
+  activerecord-jdbc-adapter!
+  activerecord-jdbcsqlite3-adapter!
   addressable (>= 2.8, < 3)
   anonymous_active_record (~> 1.0, >= 1.0.9)
   anonymous_loader (~> 0.1, >= 0.1.3)
@@ -442,6 +451,7 @@ DEPENDENCIES
   gem_bench (~> 2.0, >= 2.0.5)
   gitmoji-regex (~> 2.0, >= 2.0.11)
   irb (~> 1.17)
+  jdbc-sqlite3!
   kettle-dev (~> 2.5, >= 2.5.17)
   kettle-drift (~> 1.0, >= 1.0.11)
   kettle-family (~> 1.2, >= 1.2.23)
@@ -464,6 +474,7 @@ DEPENDENCIES
   rubocop-ruby2_4 (~> 3.0, >= 3.0.5)
   ruby-progressbar (~> 1.13)
   simple_column-scopes!
+  sqlite3 (~> 1.3)
   standard (~> 1.56, >= 1.56.0)
   stone_checksums (~> 1.0, >= 1.0.8)
   stringio (>= 3.0)
@@ -476,9 +487,9 @@ DEPENDENCIES
   yard-relative_markdown_links (~> 0.6)
 
 CHECKSUMS
-  activemodel (8.0.4) sha256=8f4e4fac3cd104b1bf30419c3745206f6f724c0e2902a939b4113f4c90730dfd
-  activerecord (8.0.4) sha256=bda32c171799e5ca5460447d3b7272ed14447244e2497abf2107f87fc44cbf32
-  activesupport (8.0.4) sha256=894a3a6c7733b5fae5a7df3acd76c4b563f38687df8a04fa3cbd25360f3fe95a
+  activemodel (7.2.3.2)
+  activerecord (7.2.3.2)
+  activesupport (7.2.3.2)
   addressable (2.8.8) sha256=7c13b8f9536cf6364c03b9d417c19986019e28f7c00ac8132da4eb0fe393b057
   anonymous_active_record (1.0.9) sha256=bbca3abc15ddf3c0209b8242386fcc5ef6a3f828bdbb70bef1e4abdce0823256
   anonymous_loader (0.1.3) sha256=084a18e2439144d955447dc11dfc982f41fcd1583ad32d4d55151325dc44cb55
@@ -538,7 +549,8 @@ CHECKSUMS
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
-  minitest (6.0.1) sha256=7854c74f48e2e975969062833adc4013f249a4b212f5e7b9d5c040bf838d54bb
+  mini_portile2 (2.8.9)
+  minitest (5.27.0)
   mister_bin (0.9.0) sha256=624fe401db4faf1978e84c17e0b320827697a13a6cba4fe656001269079be7d3
   mutex_m (0.3.0) sha256=cfcb04ac16b69c4813777022fdceda24e9f798e48092a2b817eb4c0a782b0751
   nokogiri (1.19.0-x86_64-linux-gnu) sha256=f482b95c713d60031d48c44ce14562f8d2ce31e3a9e8dd0ccb131e9e5a68b58c
@@ -602,6 +614,7 @@ CHECKSUMS
   simplecov-console (0.9.5)
   simplecov-rcov (0.3.7)
   simplecov_lcov_formatter (0.9.0)
+  sqlite3 (1.7.3)
   standard (1.56.0) sha256=ae2af4d9669589162ac69ed5ef59dcf9f346d4afc81f7e62b84339310dfcb787
   standard-custom (1.0.2) sha256=424adc84179a074f1a2a309bb9cf7cd6bfdb2b6541f20c6bf9436c0ba22a652b
   standard-performance (1.9.0) sha256=49483d31be448292951d80e5e67cdcb576c2502103c7b40aec6f1b6e9c88e3f2
@@ -623,7 +636,6 @@ CHECKSUMS
   turbo_tests2 (3.2.4)
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   unicode-display_width (2.6.0) sha256=12279874bba6d5e4d2728cef814b19197dbb10d7a7837a869bab65da943b7f5a
-  uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
   version_gem (1.1.15) sha256=a73241587b29252e3567e0c818ded80730eb754d43b508f6ce4db22ca9ba27d0
   webrick (1.9.2) sha256=beb4a15fc474defed24a3bda4ffd88a490d517c9e4e6118c3edce59e45864131
   yaml-converter (0.2.4) sha256=f243899c6608eda947c1be994a361a3fc9b1dafd92bd07c9f2c3366d0e3d1852
