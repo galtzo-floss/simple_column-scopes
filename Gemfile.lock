@@ -189,6 +189,9 @@ GEM
       docopt_ng (~> 0.7.1)
       reline (~> 0.6)
     mutex_m (0.3.0)
+    nokogiri (1.19.0)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.19.0-x86_64-linux-gnu)
       racc (~> 1.4)
     nomono (1.1.4)
@@ -429,9 +432,10 @@ GEM
     yard-relative_markdown_links (0.6.0)
       nokogiri (>= 1.14.3, < 2)
     zeitwerk (2.7.4)
-    zlib (3.2.2)
+    zlib (3.2.3)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -487,13 +491,13 @@ DEPENDENCIES
   yard-relative_markdown_links (~> 0.6)
 
 CHECKSUMS
-  activemodel (7.2.3.2)
-  activerecord (7.2.3.2)
-  activesupport (7.2.3.2)
+  activemodel (7.2.3.2) sha256=3777c67cd8dd1560f30387523013dacb370a0a1cf532037410887819e4416927
+  activerecord (7.2.3.2) sha256=e62d24ba7e5f820d24ed122eb9225491b0aaa8398778783b400067c3467285c7
+  activesupport (7.2.3.2) sha256=ddc90d11dd88086d78ace03407fe3c2a3f5c8853c3c3046313db5ed823ef3312
   addressable (2.8.8) sha256=7c13b8f9536cf6364c03b9d417c19986019e28f7c00ac8132da4eb0fe393b057
   anonymous_active_record (1.0.9) sha256=bbca3abc15ddf3c0209b8242386fcc5ef6a3f828bdbb70bef1e4abdce0823256
   anonymous_loader (0.1.3) sha256=084a18e2439144d955447dc11dfc982f41fcd1583ad32d4d55151325dc44cb55
-  ansi (1.6.0)
+  ansi (1.6.0) sha256=ac9ea0c0ea8d32fb4e271348e609963ac78882f34b73836c2a02b3622e666658
   appraisal2 (3.2.0) sha256=ccd0b767ac4060cd7af6d16747459b6990f49c39c7b4fb1f7d1146b1e97c492f
   appraisal2-rubocop (1.0.0) sha256=b71410fbb014befda5340605a605b7f6f3f012739baf0acc5b4351b592c3258d
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
@@ -535,24 +539,25 @@ CHECKSUMS
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
   json (2.18.1) sha256=fe112755501b8d0466b5ada6cf50c8c3f41e897fa128ac5d263ec09eedc9f986
-  kettle-dev (2.5.17)
-  kettle-drift (1.0.11)
+  kettle-dev (2.5.17) sha256=9dc2355f5c3eb73345ec412a394faa72744e8f8384fe8f4955ddb0f04d0a0efe
+  kettle-drift (1.0.11) sha256=f8b039fbca72cc5f80c59e950e7b8be92513213753297a09e2618303fe6fd717
   kettle-family (1.2.23) sha256=5f7e15dc381a66d9099b79ac828fc9bb807a0b8abd986cb0036da7c9c7e733fc
   kettle-gha-pins (0.3.5) sha256=ae57654eb79e50d3a3b44784ad5fdfdbae901623a050b88962cb28c4d45403e0
   kettle-ndjson (0.1.10) sha256=906c83606bb3a4dd24f49cfbcf10a26e1a245cd1daaf9c8a95ee0caec83eba37
   kettle-rb (0.1.8) sha256=a15023eaa5470de7b7c2a6a8017c430f20395b67a43cf35d555e35f02a5391d8
-  kettle-soup-cover (3.0.9)
+  kettle-soup-cover (3.0.9) sha256=32e3dbb6b15ad46d1ff7ef141597061b686bbfbfa2af71e7fe2e50d47c35f4e7
   kettle-test (2.0.19) sha256=c3628b910100976bc021d98921489ba77e06f61e1d8a873a0ac3f9dbd5565d70
-  kettle-wash (0.1.5)
+  kettle-wash (0.1.5) sha256=3616a89f9ecd2920c68124822930e6e66ae30a70f9cafc565a103621ed43e3b8
   kramdown (2.5.2) sha256=1ba542204c66b6f9111ff00dcc26075b95b220b07f2905d8261740c82f7f02fa
   kramdown-parser-gfm (1.1.0) sha256=fb39745516427d2988543bf01fc4cf0ab1149476382393e0e9c48592f6581729
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
-  mini_portile2 (2.8.9)
-  minitest (5.27.0)
+  mini_portile2 (2.8.9) sha256=0cd7c7f824e010c072e33f68bc02d85a00aeb6fce05bb4819c03dfd3c140c289
+  minitest (5.27.0) sha256=2d3b17f8a36fe7801c1adcffdbc38233b938eb0b4966e97a6739055a45fa77d5
   mister_bin (0.9.0) sha256=624fe401db4faf1978e84c17e0b320827697a13a6cba4fe656001269079be7d3
   mutex_m (0.3.0) sha256=cfcb04ac16b69c4813777022fdceda24e9f798e48092a2b817eb4c0a782b0751
+  nokogiri (1.19.0) sha256=e304d21865f62518e04f2bf59f93bd3a97ca7b07e7f03952946d8e1c05f45695
   nokogiri (1.19.0-x86_64-linux-gnu) sha256=f482b95c713d60031d48c44ce14562f8d2ce31e3a9e8dd0ccb131e9e5a68b58c
   nomono (1.1.4) sha256=460736cab138cea68fb03dd7887ad315d8bcd5ad77b6a7a57866f0079a2cc7ce
   openssl (4.0.2) sha256=1037ad2868ae58df9ad917891c0c0f9815a1172f6846d4bcdd508e4c2ee747c2
@@ -609,12 +614,12 @@ CHECKSUMS
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   silent_stream (1.0.12) sha256=377c43aa10033fe90c33b39ea8cd97d79f2d1c4856df598efc56f3091f3ae782
   simple_column-scopes (0.1.1)
-  simplecov (1.0.3)
-  simplecov-cobertura (4.0.0)
-  simplecov-console (0.9.5)
-  simplecov-rcov (0.3.7)
-  simplecov_lcov_formatter (0.9.0)
-  sqlite3 (1.7.3)
+  simplecov (1.0.3) sha256=38ef0514f16ae7562f0d0f4df02610071115103d301b6de7dacbcc000082e39b
+  simplecov-cobertura (4.0.0) sha256=e4fb3159b1ecea545b44f5452a8611305323e78ad23eae8aed35924d072e01ea
+  simplecov-console (0.9.5) sha256=b1108bcfff5f210143e2b8301698c367b01586f20d25a73e95475a5df6fc6ff6
+  simplecov-rcov (0.3.7) sha256=372f50bf6df6b6350b7d0c840f2f8bdabe021861a43c26877b747c9ac96139fc
+  simplecov_lcov_formatter (0.9.0) sha256=4c1839bb31dcf7a8f7a6474c94ed228aa03b994e9dd5e1965e58b4121b049bed
+  sqlite3 (1.7.3) sha256=fa77f63c709548f46d4e9b6bb45cda52aa3881aa12cc85991132758e8968701c
   standard (1.56.0) sha256=ae2af4d9669589162ac69ed5ef59dcf9f346d4afc81f7e62b84339310dfcb787
   standard-custom (1.0.2) sha256=424adc84179a074f1a2a309bb9cf7cd6bfdb2b6541f20c6bf9436c0ba22a652b
   standard-performance (1.9.0) sha256=49483d31be448292951d80e5e67cdcb576c2502103c7b40aec6f1b6e9c88e3f2
@@ -624,7 +629,7 @@ CHECKSUMS
   stringio (3.2.0) sha256=c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1
   strings-ansi (0.2.0) sha256=90262d760ea4a94cc2ae8d58205277a343409c288cbe7c29416b1826bd511c88
   strscan (3.1.8) sha256=aae2db611a225559f21ffbb71765c9a4e60fd262534a9ea84f4f11c7f32f679e
-  terminal-table (4.0.0)
+  terminal-table (4.0.0) sha256=f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   timecop (0.9.10) sha256=12ba45ce57cdcf6b1043cb6cdffa6381fd89ce10d369c28a7f6f04dc1b0cd8eb
   timecop-rspec (1.0.3) sha256=005f14841bb606dcaefb060e321b5388e2e59537742bee8b3a9a9a40e598fab9
@@ -633,7 +638,7 @@ CHECKSUMS
   tty-cursor (0.7.1) sha256=79534185e6a777888d88628b14b6a1fdf5154a603f285f80b1753e1908e0bf48
   tty-progressbar (0.18.3) sha256=6cbb4260e55e74a9180d502143eb6a467d2c8e51bf5f3c9509fb5cacc3d4a5f6
   tty-screen (0.8.2) sha256=c090652115beae764336c28802d633f204fb84da93c6a968aa5d8e319e819b50
-  turbo_tests2 (3.2.4)
+  turbo_tests2 (3.2.4) sha256=f3bd4605b3a3518e5caab52a7b97c2839404a33df1a32709fc47865cc3f6aef3
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   unicode-display_width (2.6.0) sha256=12279874bba6d5e4d2728cef814b19197dbb10d7a7837a869bab65da943b7f5a
   version_gem (1.1.15) sha256=a73241587b29252e3567e0c818ded80730eb754d43b508f6ce4db22ca9ba27d0
@@ -644,7 +649,7 @@ CHECKSUMS
   yard-lint (1.10.2) sha256=3e595709d088a8cc827e706a4146b447eb6a907ee375d06c11077369d00717f6
   yard-relative_markdown_links (0.6.0) sha256=3e5ffa85cbad9bac70bee5421774b190fb25d3bdf489323a5b3534f647d1a70e
   zeitwerk (2.7.4) sha256=2bef90f356bdafe9a6c2bd32bcd804f83a4f9b8bc27f3600fff051eb3edcec8b
-  zlib (3.2.2) sha256=908e61263f99c1371b5422581e2d6663bd37c6b04ae13b5f8cb10b0d09379f40
+  zlib (3.2.3) sha256=5bd316698b32f31a64ab910a8b6c282442ca1626a81bbd6a1674e8522e319c20
 
 BUNDLED WITH
   4.0.17
