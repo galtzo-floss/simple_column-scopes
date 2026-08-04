@@ -32,9 +32,6 @@ eval_gemfile "gemfiles/modular/debug.gemfile"
 # Code Coverage (env-switched: KETTLE_DEV_DEV=true for local paths)
 eval_gemfile "gemfiles/modular/coverage.gemfile"
 
-# The default suite exercises the current ActiveRecord integration.
-eval_gemfile "gemfiles/modular/activerecord/ar-7.2.gemfile"
-
 # Linting
 eval_gemfile "gemfiles/modular/style.gemfile"
 
