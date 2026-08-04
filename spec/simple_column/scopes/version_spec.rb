@@ -2,7 +2,7 @@
 
 require "spec_helper"
 require "anonymous_loader"
-require "simple_column-scopes"
+require "simple_column/scopes"
 
 RSpec.describe SimpleColumn::Scopes::Version do
   it_behaves_like "a Version module", described_class
