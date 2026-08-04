@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module SimpleColumn
-  class Scopes
+  class Scopes < Module
     # Version namespace for this gem.
     module Version
       # Current gem version.
