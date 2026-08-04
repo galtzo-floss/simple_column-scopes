@@ -95,6 +95,8 @@ Please file a bug if you notice a violation of semantic versioning.
   legacy manual bundle install path, avoiding setup-time Bundler full-index
   failures against `gem.coop`.
 
+- Restore SimpleColumn Scopes class API after templating.
+
 ### Security
 
 ## [0.1.1] - 2026-02-03

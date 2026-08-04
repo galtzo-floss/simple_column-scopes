@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 module SimpleColumn
-  module Scopes
+  # This is a Class / Module Hybrid (see simple_column/scopes.rb)
+  class Scopes < Module
     # Version namespace for this gem.
     module Version
       # Current gem version.
