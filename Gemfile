@@ -18,7 +18,7 @@ git_source(:gitlab) { |repo_name| "https://gitlab.com/#{repo_name}" }
 # Include dependencies from simple_column-scopes.gemspec
 gemspec
 
-gem 'kettle-family', '~> 1.2', '>= 1.2.53'
+gem "kettle-family", "~> 1.2", ">= 1.2.51"
 
 # Local workspace dependency wiring for *_local.gemfile overrides
 gem "nomono", "~> 1.1", ">= 1.1.4", require: false # ruby >= 3.2.0
@@ -32,14 +32,14 @@ eval_gemfile "gemfiles/modular/debug.gemfile"
 # Code Coverage (env-switched: KETTLE_DEV_DEV=true for local paths)
 eval_gemfile "gemfiles/modular/coverage.gemfile"
 
-# The default suite exercises the current ActiveRecord integration.
-eval_gemfile "gemfiles/modular/activerecord/ar-7.2.gemfile"
-
 # Linting
 eval_gemfile "gemfiles/modular/style.gemfile"
 
 # Documentation
 eval_gemfile "gemfiles/modular/documentation.gemfile"
+
+# Changelog release tooling (available on Ruby versions supported by kettle-changelog)
+eval_gemfile "gemfiles/modular/changelog.gemfile"
 
 # Optional
 eval_gemfile "gemfiles/modular/optional.gemfile"

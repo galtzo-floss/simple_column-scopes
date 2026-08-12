@@ -36,3 +36,7 @@ Layout/IndentationConsistency:
 Layout/TrailingEmptyLines:
   # Confusingly, final_blank_line means two blank lines, and final_newline means one.
   EnforcedStyle: final_newline
+# Appraisal uses this filename for the moving HEAD dependency fixture.
+Naming/FileName:
+  Exclude:
+    - '**/vHEAD.gemfile'

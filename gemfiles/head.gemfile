@@ -2,9 +2,7 @@
 
 source "https://gem.coop"
 
-gem "benchmark", "~> 0.4", ">= 0.4.1"
-
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/activerecord/ar-8.0.gemfile")
 
