@@ -1,4 +1,10 @@
 require "active_support/core_ext/object/blank"
+
+module SimpleColumn
+  class Scopes < Module
+  end
+end
+
 require "version_gem"
 require_relative "scopes/version"
 

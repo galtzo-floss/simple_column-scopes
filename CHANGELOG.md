@@ -110,6 +110,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Restore SimpleColumn Scopes class API after templating.
 
+- Preserve the SimpleColumn::Scopes class hierarchy while loading its version namespace.
+
 ### Security
 
 ## [0.1.1] - 2026-02-03

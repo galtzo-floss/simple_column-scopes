@@ -7,6 +7,11 @@ require "simple_column/scopes"
 RSpec.describe SimpleColumn::Scopes::Version do
   it_behaves_like "a Version module", described_class
 
+  it "preserves Scopes as a Class derived from Module" do
+    expect(SimpleColumn::Scopes).to be_a(Class)
+    expect(SimpleColumn::Scopes.superclass).to eq(Module)
+  end
+
   it "executes the version file for coverage without redefining constants" do
     paths = [
       File.expand_path("../../../lib/simple_column/scopes/version.rb", __dir__),
