@@ -112,6 +112,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Preserve the SimpleColumn::Scopes class hierarchy while loading its version namespace.
 
+- Restore the default ActiveRecord test bundle and its SQLite dependency lock.
+
 ### Security
 
 ## [0.1.1] - 2026-02-03
