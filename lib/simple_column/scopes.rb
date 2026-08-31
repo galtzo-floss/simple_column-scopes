@@ -6,7 +6,6 @@ module SimpleColumn
 end
 
 require "version_gem"
-require_relative "scopes/version"
 
 # Purpose:
 # Create dynamic modules which define dynamic methods for scopes based on a dynamic array of column names
@@ -76,6 +75,8 @@ module SimpleColumn
     end
   end
 end
+
+require_relative "scopes/version"
 
 SimpleColumn::Scopes::Version.class_eval do
   extend VersionGem::Basic

@@ -12,9 +12,13 @@ gem_version =
     # See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-2630782358
     # See: https://github.com/panorama-ed/memo_wise/pull/397
     Module.new.tap { |mod| Kernel.load("#{__dir__}/lib/simple_column/scopes/version.rb", mod) }::SimpleColumn::Scopes::Version::VERSION
+  # The namesake namespace has a superclass. Directly requiring version.rb
+  # on legacy Ruby could define that namespace with the wrong superclass.
   else
-    require_relative "lib/simple_column/scopes/version"
-    SimpleColumn::Scopes::Version::VERSION
+    require "anonymous_loader"
+    path = File.expand_path("lib/simple_column/scopes/version.rb", __dir__)
+    anonymous_namespace = AnonymousLoader.load(files: path)
+    anonymous_namespace::SimpleColumn::Scopes::Version::VERSION
   end
 
 Gem::Specification.new do |spec|
@@ -127,7 +131,7 @@ Gem::Specification.new do |spec|
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 3.0", ">= 3.0.17")             # ruby >= 2.4
+  spec.add_development_dependency("kettle-dev", "~> 3.0", ">= 3.0.24")             # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
@@ -141,9 +145,9 @@ Gem::Specification.new do |spec|
   # Testing
   # Loads version files in anonymous namespaces for coverage without constant redefinition warnings.
   spec.add_development_dependency("anonymous_loader", "~> 0.1", ">= 0.1.3")         # ruby >= 2.2.0
-  spec.add_development_dependency("appraisal2", "~> 3.2", ">= 3.2.2")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
+  spec.add_development_dependency("appraisal2", "~> 3.2", ">= 3.2.3")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
   spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.21")            # ruby >= 2.4
-  spec.add_development_dependency("turbo_tests2", "~> 3.2", ">= 3.2.6")           # ruby >= 2.4.0, default kettle-test runner
+  spec.add_development_dependency("turbo_tests2", "~> 3.2", ">= 3.2.7")           # ruby >= 2.4.0, default kettle-test runner
 
   # Releasing
   spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0
