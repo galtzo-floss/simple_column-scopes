@@ -8,6 +8,7 @@
 
 source "https://gem.coop"
 
+git_source(:github) { |repo_name| "git@github.com:#{repo_name}.git" }
 git_source(:codeberg) { |repo_name| "https://codeberg.org/#{repo_name}" }
 git_source(:gitlab) { |repo_name| "https://gitlab.com/#{repo_name}" }
 
@@ -31,6 +32,11 @@ eval_gemfile "gemfiles/modular/debug.gemfile"
 
 # Code Coverage (env-switched: KETTLE_DEV_DEV=true for local paths)
 eval_gemfile "gemfiles/modular/coverage.gemfile"
+
+# kettle-jem:freeze
+# The default suite exercises the current ActiveRecord integration.
+eval_gemfile "gemfiles/modular/activerecord/ar-7.2.gemfile"
+# kettle-jem:unfreeze
 
 # Linting
 eval_gemfile "gemfiles/modular/style.gemfile"
