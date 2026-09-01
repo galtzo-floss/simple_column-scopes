@@ -5,4 +5,11 @@ module SimpleColumn
     end
     VERSION: String
   end
+
+  class Scopes
+    module Version
+      VERSION: String
+    end
+    VERSION: String
+  end
 end
