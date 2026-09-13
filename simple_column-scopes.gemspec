@@ -15,10 +15,16 @@ gem_version =
   # The namesake namespace has a superclass. Directly requiring version.rb
   # on legacy Ruby could define that namespace with the wrong superclass.
   else
-    require "anonymous_loader"
     path = File.expand_path("lib/simple_column/scopes/version.rb", __dir__)
-    anonymous_namespace = AnonymousLoader.load(files: path)
-    anonymous_namespace::SimpleColumn::Scopes::Version::VERSION
+    begin
+      require "anonymous_loader"
+      anonymous_namespace = AnonymousLoader.load(files: path)
+      anonymous_namespace::SimpleColumn::Scopes::Version::VERSION
+    rescue LoadError
+      # anonymous_loader is a development dependency, and Bundler evaluates this
+      # gemspec before installing it; read the version without defining constants.
+      File.read(path)[/VERSION = "([^"]+)"/, 1]
+    end
   end
 
 Gem::Specification.new do |spec|

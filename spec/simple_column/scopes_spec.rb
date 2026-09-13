@@ -29,7 +29,7 @@ RSpec.describe SimpleColumn::Scopes do
   describe "integration with ActiveRecord", :aggregate_failures do
     let(:scopes) { described_class }
     let(:model) do
-      AnonymousActiveRecord.generate(columns: %w[name category_id active]) do
+      AnonymousActiveRecord.generate(connection_params: ANONYMOUS_AR_CONNECTION_PARAMS, columns: %w[name category_id active]) do
         # rubocop:disable RSpec/DescribedClass
         include SimpleColumn::Scopes.new(:for_name, :for_category_id, :for_active)
         # rubocop:enable RSpec/DescribedClass
