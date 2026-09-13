@@ -27,7 +27,7 @@
     [47, 39, 4, "Lint/LtsRuby/UnavailableMethod: Set#to_s is unavailable before Ruby 2.5.", 2087961426],
     [50, 99, 4, "Lint/LtsRuby/UnavailableMethod: Set#to_s is unavailable before Ruby 2.5.", 2087961426]
   ],
-  "simple_column-scopes.gemspec:3442190849": [
+  "simple_column-scopes.gemspec:2208600270": [
     [48, 24, 9, "Lint/LtsRuby/UnavailableMethod: Symbol#end_with? is unavailable before Ruby 2.7.", 308216808],
     [54, 16, 16, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 3147164910],
     [55, 16, 19, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 279056797],
