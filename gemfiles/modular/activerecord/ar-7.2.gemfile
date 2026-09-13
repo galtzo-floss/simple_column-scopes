@@ -1,13 +1,17 @@
 gem "activerecord", "~> 7.2.0"
-gem "sqlite3", "~> 1.3", platforms: [:ruby]
+# sqlite3 >= 2.9.6 fixes CVE-2026-54619 / GHSA-mwm8-39rw-8826 but requires Ruby >= 3.2.
+if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.2")
+  gem "sqlite3", ">= 2.9.6", platforms: [:ruby]
+else
+  gem "sqlite3", ">= 1.4", "< 3", platforms: [:ruby]
+end
 # gem "mysql2", platforms: [:ruby]
 
 platform :jruby do
-  gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "70-stable"
+  # Released adapter series matching ActiveRecord 7.2 (brings jdbc-sqlite3 and activerecord-jdbc-adapter).
+  gem "activerecord-jdbcsqlite3-adapter", "~> 72.1"
   # gem "jdbc-mysql",                           github: "jruby/activerecord-jdbc-adapter", branch: "70-stable"
   # gem "jdbc-postgres",                        github: "jruby/activerecord-jdbc-adapter", branch: "70-stable"
-  gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "70-stable"
-  gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "70-stable"
   # gem "activerecord-jdbcmysql-adapter",       github: "jruby/activerecord-jdbc-adapter", branch: "70-stable"
   # gem "activerecord-jdbcpostgresql-adapter",  github: "jruby/activerecord-jdbc-adapter", branch: "70-stable"
 end

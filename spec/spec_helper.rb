@@ -32,3 +32,14 @@ rescue LoadError => error
 end
 
 require "simple_column/scopes"
+
+# AnonymousActiveRecord connects with the sqlite3 adapter by default. On JRuby,
+# activerecord-jdbc-adapter provides that adapter name from ActiveRecord 7.2;
+# older ActiveRecord needs the jdbcsqlite3 adapter name.
+require "active_record"
+require "activerecord-jdbcsqlite3-adapter" if RUBY_PLATFORM == "java"
+ANONYMOUS_AR_CONNECTION_PARAMS = {
+  adapter: (RUBY_PLATFORM == "java" && ActiveRecord.gem_version < Gem::Version.new("7.2")) ? "jdbcsqlite3" : "sqlite3",
+  encoding: "utf8",
+  database: ":memory:"
+}.freeze
